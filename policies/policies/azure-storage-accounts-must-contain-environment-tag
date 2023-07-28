@@ -1,0 +1,19 @@
+{
+    "name": " Azure Storage Accounts Must Contain An Environment Tag",
+    "policyType": "config",
+    "description": " Azure Storage Accounts Must Contain An Environment Tag",
+    "severity": "medium",
+    "rule": {
+        "name": " Azure Storage Accounts Must Contain An Environment Tag",
+        "query": "config from cloud.resource where api.name = 'azure-storage-account-list' AND json.rule = tags.environment does not exist",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
