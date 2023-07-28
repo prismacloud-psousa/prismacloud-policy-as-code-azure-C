@@ -1,0 +1,19 @@
+{
+    "name": "Production Azure Storage Accoounts Must Utilize Read-Access Geo-Redundant Storage (RA_GRS)",
+    "policyType": "config",
+    "description": "Production Azure Storage Accoounts Must Utilize Read-Access Geo-Redundant Storage (RA_GRS).  This is an XXX organizational Policy",
+    "severity": "medium",
+    "rule": {
+        "name": "Production Azure Storage Accoounts Must Utilize Read-Access Geo-Redundant Storage (RA_GRS)",
+        "query": "config from cloud.resource where api.name = 'azure-storage-account-list' AND json.rule = sku.name does not equal "Standard_RAGRS" and tags contains production",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
