@@ -1,0 +1,19 @@
+{
+    "name": " Azure Storage Accounts Must Contain A Data Classificaion Tag",
+    "policyType": "config",
+    "description": " Azure Storage Accounts Must Contain A Data Classificaion Tag",
+    "severity": "medium",
+    "rule": {
+        "name": " Azure Storage Accounts Must Contain A Data Classificaion Tag",
+        "query": "config from cloud.resource where api.name = 'azure-storage-account-list' AND json.rule = tags.classification does not exist",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
