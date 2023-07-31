@@ -1,0 +1,19 @@
+{
+    "name": "Azure Container Registries Must Use Private Endpoints",
+    "policyType": "config",
+    "description": "Azure Container Registries Must Use Private Endpoints",
+    "severity": "medium",
+    "rule": {
+        "name": "Azure Container Registries Must Use Private Endpoints",
+        "query": "config from cloud.resource where cloud.type = 'azure' AND api.name = 'azure-container-registry' AND json.rule = properties.publicNetworkAccess equals "Enabled"",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
