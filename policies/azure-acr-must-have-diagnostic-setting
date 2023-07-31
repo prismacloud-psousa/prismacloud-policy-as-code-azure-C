@@ -1,0 +1,21 @@
+{
+    "name": "Azure Container Registries Must Have Diagnostic Settings Enabled",
+    "policyType": "config",
+    "description": "Azure Container Registries Must Have Diagnostic Settings Enabled",
+    "policyType": "config",",
+    "severity": "medium",
+    "rule": {
+        "name": "Azure Container Registries Must Have Diagnostic Settings Enabled",
+    "policyType": "config",",
+        "query": "config from cloud.resource where cloud.type = 'azure' AND api.name = 'azure-container-registry' AND json.rule = diagnosticSettings[*].id does not exist",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
