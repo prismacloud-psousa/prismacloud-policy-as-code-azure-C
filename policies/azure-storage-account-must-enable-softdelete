@@ -1,0 +1,32 @@
+{
+    "name": "Azure Storage Account Must Have Soft Delete Enabled",
+    "policyType": "config",
+    "description": "Azure Storage Account Must Have Soft Delete Enabled",
+    "severity": "medium",
+    "rule": {
+        "name": "Azure Storage Account Must Have Soft Delete Enabled",
+        "query": "config from cloud.resource where cloud.type = 'azure' AND api.name = 'azure-storage-account-list' AND json.rule = deleteRetentionPolicy.blob.enabled is false and (kind does not equal ignore case FileStorage)",
+        "parameters": {
+            "savedSearch": "true"
+        },
+        "type": "Config"
+    },
+    "recommendation": "",
+    "cloudType": "azure",
+    "complianceMetadata": [],
+    "labels": [],
+    "enabled": true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
